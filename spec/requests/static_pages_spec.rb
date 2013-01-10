@@ -12,15 +12,23 @@ describe "Static Pages" do
         end
 
         it "should include google calendar" do
-            should have_selector("iframe", src: "https://www.google.com/calendar/embed?src=titkqiqe5bsg7ij1hh757f2hvg%40group.calendar.google.com&ctz=Europe/Paris")
+            should have_selector("iframe", :src => "https://www.google.com/calendar/embed?src=titkqiqe5bsg7ij1hh757f2hvg%40group.calendar.google.com&ctz=Europe/Paris")
+        end
+
+        it "should have the right title" do
+            should have_selector('title', :text => "We Meet In Toulouse | Home")
         end
     end
 
-
     describe "About" do
+        before { visit '/about' }
+
         it "should have the content 'À propos'" do
-            visit '/about'
             page.should have_content('À propos')
+        end
+
+        it "should have the right title" do
+            page.should have_selector('title', :text => "We Meet In Toulouse | À propos")
         end
     end
 
