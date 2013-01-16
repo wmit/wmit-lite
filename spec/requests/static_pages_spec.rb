@@ -18,6 +18,16 @@ describe "Static Pages" do
         it "should have the right title" do
             should have_selector('title', :text => "We Meet In Toulouse | Home")
         end
+
+        it "should have link to ical" do
+            should have_selector("a", :text => "iCal")
+            should have_selector("a", :href => "http://www.google.com/calendar/ical/titkqiqe5bsg7ij1hh757f2hvg%40group.calendar.google.com/public/basic.ics")
+        end
+
+        it "should have link to xml" do
+            should have_selector("a", :text => "Xml")
+            should have_selector("a", :href => "http://www.google.com/calendar/ical/titkqiqe5bsg7ij1hh757f2hvg%40group.calendar.google.com/public/basic")
+        end
     end
 
     describe "About" do
