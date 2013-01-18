@@ -9,34 +9,39 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <%= link_to "We Meet In Toulouse", '#', id: "logo" %>
-          <nav>
-            <ul class="nav pull-right">
-              <li><%= link_to "Home",    '/home' %></li>
-              <li><%= link_to "À propos", '/about' %></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <div class="container">
-      <%= yield %>
 
-      <footer class="footer">
-        <nav>
-          <ul>
-            <li>Ajoutez à votre agenda </li>
-            <li><%= link_to "iCal",   'http://www.google.com/calendar/ical/titkqiqe5bsg7ij1hh757f2hvg%40group.calendar.google.com/public/basic.ics' %></li>
-            <li><%= link_to "Xml", 'http://www.google.com/calendar/feeds/titkqiqe5bsg7ij1hh757f2hvg%40group.calendar.google.com/public/basic' %></li>
-          </ul>
-        </nav>
-      </footer>
+  <body>
+    <div id='header'>
+      <div class='inner_container'>
+        <h1>
+          <a href='/'>
+            <span>We</span>MeetInToulouse
+          </a>
+        </h1>
+
+      </div>
+      <ul id='main_nav'>
+        <li class='nohome'><a href="/home">Le calendrier</a></li>
+        <li class='nohome'><a href="/about">Le projet</a></li>
+      </ul>
+
     </div>
 
+    <div class="row">
+      <div class="eleven column centered">
+        <%= yield %>
+      </div>
+    </div>
 
+    <div id="footer">
+      <hr />
+      <div class="content">
+        <ul>
+          <li>Ajoutez à votre agenda </li>
+          <li><%= link_to "iCal",   'http://www.google.com/calendar/ical/titkqiqe5bsg7ij1hh757f2hvg%40group.calendar.google.com/public/basic.ics' %></li>
+          <li><%= link_to "Xml", 'http://www.google.com/calendar/feeds/titkqiqe5bsg7ij1hh757f2hvg%40group.calendar.google.com/public/basic' %></li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
