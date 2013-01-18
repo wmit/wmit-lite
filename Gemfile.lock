@@ -162,10 +162,10 @@ PLATFORMS
 DEPENDENCIES
   capybara (= 1.1.2)
   coffee-rails (= 3.2.2)
-  compass-rails
+  compass-rails (= 1.0.3)
   jquery-rails (= 2.0.2)
   rails (= 3.2.11)
   rspec-rails (= 2.11.0)
   sass-rails (= 3.2.5)
   uglifier (= 1.2.3)
-  zurb-foundation
+  zurb-foundation (= 3.2.4)
