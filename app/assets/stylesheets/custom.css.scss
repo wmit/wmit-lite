@@ -1,100 +1,104 @@
-@import "bootstrap";
+@import "foundation";
+@import "lib/webfonts";
 
-
-html {
-  overflow-y: scroll;
+body{
+  background: $white url('background.png') repeat-x;
 }
 
-body {
-  padding-top: 25px;
+h1, h2 {
+  color: #333;
+  span{
+    color: $mainColor;
+  }
 }
 
-section {
-  overflow: auto;
+.nav-bar{
+  background: transparent;
+  &>li{
+    line-height: 1.4em;
+    border: none;
+    &:last-child{
+      border: none;
+    }
+    &>a:first-child{
+      @include font-size(24);
+      @extend .league_gothic;
+      color: $black;
+    }
+    &:hover{
+      background: transparent;
+      a{
+        color: #e6a74d;
+      }
+    }
+  }
 }
 
-textarea {
-  resize: vertical;
+#header{
+  background-color: transparent;
+  background-image: url('rainbow.png');
+  background-repeat: repeat-x;
+  @include background-size(100% 3px);
+
+  h1{
+    margin: 10px 0 0 0;
+    span{
+      color: $black;
+    }
+    li{
+      a{
+        color: black;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 20px;
+        &:hover, &.active{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .inner_container{
+    @include outerRow;
+    padding-left:172px;
+    background:url("logo.png") left 10px no-repeat;
+    position:relative;height:130px;
+    h1 {
+      @include column(7);
+      @include font-size(32);
+    }
+  }
+  #main_nav {
+    @include outerRow;
+    @extend .nav-bar;
+    @extend .league_gothic;
+    margin-top:-70px !important;
+    li {
+      a {
+        padding:0 10px !important;
+      }
+      &:first-child {
+        margin-left:176px !important;
+      }
+    }
+  }
 }
 
-.center {
-  text-align: center;
-}
+#footer{
+  
+  @include outerRow;
+  
+  hr {
+    @include column(12);
+  }
+  .content {
+    @include outerRow;
 
-.center h1 {
-  margin-bottom: 10px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.7em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #999;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
-/* header */
-
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  line-height: 1;
-}
-
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* footer */
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #999;
-}
-
-footer a {
-  color: #555;
-}  
-
-footer a:hover { 
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 10px;
+    ul {
+      @include column(4);
+      @include offsetBy(8);
+      @extend .link-list;
+      
+    }
+  }
 }
