@@ -12,5 +12,12 @@
 <p>Pour l'instant, le processus est manuel. 
 Si vous êtes organisateur régulier d'évènements sur Toulouse, il suffit de demander gentillement à avoir accès en écriture au calendrier à <%= link_to 'Antoine', 'http://twitter.com/avernois' %> ou <%= link_to 'Nicolas', 'http://twitter.com/ndeverge' %>. Sinon, un petit message avec les bonnes infos, et on le rajoutera (nom, lieu, lien vers descriptif et inscription).</p>
 
+<h2>Rappel automatique des évènements</h2>
+<p>Les évènements sont rappelés automatiquement la veille par <%= link_to 'le compte Twitter "We Meet In Toulouse"', 'http://twitter.com/wemeetintlse' %>. Si vous souhaitez avoir connaissance de ces rappels, merci de "follower" ce compte.</p>
+<p>Voici un exemple de tweet :</p>
+<blockquote class="twitter-tweet" lang="fr"><p>N'oubliez pas, demain, c'est Code &amp; Coffee <a href="https://t.co/ittwfj9lWd" title="https://www.google.com/calendar/event?eid=ZGIwb2U4OHNuY3ZhYTdzZmVuMTZvajBuOWNfMjAxMzAzMTRUMDYzMDAwWiB0aXRrcWlxZTVic2c3aWoxaGg3NTdmMmh2Z0Bn">google.com/calendar/event…</a> <a href="https://twitter.com/search/%23wmit">#wmit</a></p>&mdash; We Meet In Toulouse (@WeMeetInTlse) <a href="https://twitter.com/WeMeetInTlse/status/311726995836911616">13 mars 2013</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <h2>Technique</h2>
 <p>Il s'agit d'un bon vieux calendrier google partagé enrobé dans une petite appli rails (totalement overkill puiqu'elle ne sert que des pages statiques :), le tout hébergé sur <%= link_to 'heroku', 'http://heroku.com' %>.</p>
+<p>Le rappel des évènements par Twitter est effectué par <%= link_to 'une petite appli Playframework/Scala home-made', 'https://github.com/ndeverge/twivent' %> qui pool les évènements dans le Google Calendar et envoie un tweet la veille.</p>
